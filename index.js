@@ -66,7 +66,9 @@ function init() {
                 `${"* "}Copy The Github url.`,
                 `${"* "}Open Git Bash and use git clone url_ .`,
                 `${"* "}Open your project with VSCode / Sublime Text.`,
-                `${"* "}Open local terminal and run the npm install command.`
+                `${"* "}Open local terminal and create a package.json using npm init -y.`,
+                `${"* "}Open local terminal and run the npm install command.`,
+                `${"* "}Final step is open the terminal and run the command node index.js`
             ]
 
         },
@@ -74,7 +76,17 @@ function init() {
 
             type: "input",
             name: "usage",
-            message: questions[4]
+            message: questions[4],
+            default: `
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "title",
+                    message: questions[0]
+                },
+            ]).then(res=>console.log(res)) // output:Your Title for the project
+              .catch(err =>console.log(err)) //output:If there is any Error
+            `
 
         },
         {

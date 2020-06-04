@@ -2,13 +2,6 @@
 // Generate README for new developer user:
 function generateMarkdownNewDev(data) {
 
-  // * [Description](${ data.table_of_contents[0] })
-  // * [Installation](${data.table_of_contents[1]})
-  // * [Usage](${data.table_of_contents[2]})
-  // * [Contributing](${data.table_of_contents[3]})
-  // * [Test](${data.table_of_contents[4]})
-  // * [License](${data.table_of_contents[5]})
-
   let str = "```";
   return `
 
@@ -26,13 +19,15 @@ function generateMarkdownNewDev(data) {
 
 * GitHub Profile :
 ${str}
-[https://github.com/${data.userName}]
+[${data.userName}][https://github.com/${data.userName}]
 ${str}
-User Email: <${data.email}>
+User Email: < ${data.email}>
 
 # Home Work Assigment: Project Title - ${ data.title} 
 ${str}
+
 ${data.description}
+
 ${str}
 
 ---------------------------------------
@@ -45,17 +40,22 @@ ${data.table_of_contents.map((element) => `* [${element}](#${element})\n`).join(
 ${data.installation.map((element) => `${element}\n`).join("")}
 
 ###  Usage:
+* Example Of the Usage
+${str}javascript
 ${ data.usage}
-
+${str}
 ------------------------------------
 ### Contributing:
 ${ data.contributing}
 ---
 ### Test:
 ${ str}
+
 ${ data.tests}
+
 ${ str} 
 ### License:
+
 [${ data.license}](https://choosealicense.com/licenses/${data.license.toLowerCase()}/)
   `;
 }

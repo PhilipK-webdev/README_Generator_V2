@@ -58,18 +58,15 @@ function init() {
 
         },
         {
+            type: "confirm",
+            name: "notice",
+            message: "Next question is about installation, if you have more than one sentence use comma (,) to seperate between every command"
+        },
+        {
 
-            type: "checkbox",
+            type: "input",
             name: "installation",
             message: questions[3],
-            choices: [
-                `${"* "}Copy The Github url.`,
-                `${"* "}Open Git Bash and use git clone url_ .`,
-                `${"* "}Open your project with VSCode / Sublime Text.`,
-                `${"* "}Open local terminal and create a package.json using npm init -y.`,
-                `${"* "}Open local terminal and run the npm install command.`,
-                `${"* "}Final step is open the terminal and run the command node index.js`
-            ]
 
         },
         {

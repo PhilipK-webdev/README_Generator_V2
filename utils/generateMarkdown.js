@@ -1,7 +1,6 @@
 // function generate the REAMDE file
-// Generate README for new developer user:
 function generateMarkdownNewDev(data) {
-
+  let arr = data.installation.split(",");
   let str = "```";
   return `
 
@@ -15,13 +14,6 @@ function generateMarkdownNewDev(data) {
 
 [![License: ${data.license}](https://img.shields.io/badge/License-${data.license}-yellow.svg)](https://opensource.org/licenses/${data.license})
 
-### My Contact Info :
-
-* GitHub Profile :
-${str}
-[${data.userName}][https://github.com/${data.userName}]
-${str}
-User Email: < ${data.email}>
 
 # Home Work Assigment: Project Title - ${ data.title} 
 ${str}
@@ -37,11 +29,11 @@ ${data.table_of_contents.map((element) => `* [${element}](#${element})\n`).join(
 ------------------------------------
 ### Installation:
 
-${data.installation.map((element) => `${element}\n`).join("")}
+${ arr.map((element) => `* ${element}\n`).join("")}
 
 ###  Usage:
 * Example Of the Usage
-${str}javascript
+${str}
 ${ data.usage}
 ${str}
 ------------------------------------
@@ -57,6 +49,12 @@ ${ str}
 ### License:
 
 [${ data.license}](https://choosealicense.com/licenses/${data.license.toLowerCase()}/)
+
+### My Contact Info :
+* GitHub Profile :
+User Email: < ${data.email}>
+[${data.userName}][https://github.com/${data.userName}]
+
   `;
 }
 

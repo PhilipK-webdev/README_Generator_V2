@@ -48,12 +48,12 @@ function init() {
             name: "table_of_contents",
             message: questions[2],
             choices: [
-                `#Description`,
-                `#Installation`,
-                `#Usage`,
-                `#Contributing`,
-                `#Test`,
-                `#License`
+                `Description`,
+                `Installation`,
+                `Usage`,
+                `Contributing`,
+                `Test`,
+                `License`
             ]
 
         },

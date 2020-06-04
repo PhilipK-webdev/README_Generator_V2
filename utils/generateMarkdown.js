@@ -2,6 +2,12 @@
 // Generate README for new developer user:
 function generateMarkdownNewDev(data) {
 
+  // * [Description](${ data.table_of_contents[0] })
+  // * [Installation](${data.table_of_contents[1]})
+  // * [Usage](${data.table_of_contents[2]})
+  // * [Contributing](${data.table_of_contents[3]})
+  // * [Test](${data.table_of_contents[4]})
+  // * [License](${data.table_of_contents[5]})
 
   let str = "```";
   return `
@@ -31,33 +37,27 @@ ${str}
 
 ---------------------------------------
 ## Table of contents:
-* [Description](${data.table_of_contents[0]})
-* [Installation](${data.table_of_contents[1]})
-* [Usage](${data.table_of_contents[2]})
-* [Contributing](${data.table_of_contents[3]})
-* [Test](${data.table_of_contents[4]})
-* [License](${data.table_of_contents[5]})
+${data.table_of_contents.map((element) => `* [${element}](#${element})\n`).join("")}
+
 ------------------------------------
 ### Installation:
 
-${data.installation.map(function (element) {
-    return element + " \n"
-  })}
+${data.installation.map((element) => `${element}\n`).join("")}
 
 ###  Usage:
-${data.usage}
+${ data.usage}
 
 ------------------------------------
 ### Contributing:
-${ data.contributing} 
+${ data.contributing}
 ---
 ### Test:
-${str}
+${ str}
 ${ data.tests}
-${str} 
+${ str} 
 ### License:
-[${data.license}](https://choosealicense.com/licenses/${data.license.toLowerCase()}/)
-`;
+[${ data.license}](https://choosealicense.com/licenses/${data.license.toLowerCase()}/)
+  `;
 }
 
 module.exports = generateMarkdownNewDev;

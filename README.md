@@ -68,6 +68,9 @@ inquirer.prompt([
 ${data.table_of_contents.map((element) => `* [${element}](#${element})\n`).join("")}//output
 
 ```
+* Demo of the App:
+
+(https://www.youtube.com/watch?v=J3IlOt3A-8c)
 ### License:
   MIT License
 

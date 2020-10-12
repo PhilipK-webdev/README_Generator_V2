@@ -1,9 +1,10 @@
-# Unit 09 Node.js and ES6+ Homework: Good README Generator
+
+  [![Generic badge](https://img.shields.io/badge/inquirer-MIT-blue.svg)](https://shields.io/)
+  ![followers](https://img.shields.io/github/followers/PhilipK-webdev?logoColor=red&style=social)
+  ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+# Introduction : Good README Generator
 
 Create a command-line application that dynamically generates a README.md from a user's input.The command line builed with Node.js and npm librairies. The application will be invoked with the following command:
-```sh
-node index.js
-```
 The README will be populated with the following:
 
 * At least one badge
@@ -68,9 +69,9 @@ inquirer.prompt([
 ${data.table_of_contents.map((element) => `* [${element}](#${element})\n`).join("")}//output
 
 ```
-* Demo of the App:
-
+## Demo:
 (https://www.youtube.com/watch?v=J3IlOt3A-8c)
+
 ### License:
   MIT License
 
